@@ -350,60 +350,56 @@ int main(int argc, char *argv[])
 			case 24:
 			{
 				puts("room24");
-				 puts("room24");
-                                puts("Welcome to 24! We sure will have a lot of fun");
-                                int playerHP = 500, boxChoice, attackChoice, enemyHP;
-                                const int attackDamage[] = {300, 400, 100000, -1};
-                                srand(time(NULL));
-                                printf("You enter a room with five boxes. Choose one (1-5, 0 to exit): ");
-                                scanf("%d", &boxChoice);
-                                while (boxChoice != 0) {
-                                        switch (boxChoice) {
-                                                case 1:
-                                                        puts("You have received a giant glowing ball.");
-                                                        break;
-                                                case 2:
-                                                        enemyHP = 1000; // Giant's HP
-                                                        printf("You are in combat with a Giant!\n");
-                                                          while (playerHP > 0 && enemyHP > 0) {
-                                                                printf("Choose your attack (1-4): ");
-                                                                scanf("%d", &attackChoice);
-                                                                if (attackChoice >= 1 && attackChoice <= 4) {
-                                                                enemyHP -= attackDamage[attackChoice - 1];
-                                                                printf("You attacked the Giant! Giant's HP: %d\n", enemyHP);
-                                                                } else {
-                                                                        printf("Invalid attack. Try again.\n");
-                                                                        continue;
-                                                                }
-                                                                if (enemyHP <= 0) {
-                                                                printf("You defeated the Giant!\n");
-                                                                return 0;  }
-                                                                 playerHP -= 50 + rand() % 20;
-                                                                 printf("The Giant attacks you! Your HP: %d\n", playerHP);
-                                                                 }
-                                                                break;
-                                                case 3:
-                                                        puts("The King is in the box, He chooses to marry you!");
-                                                        break;
-                                                case 4:
-                                                        printf("You found the princess. More adventures ahead!\n");
-                                                        return 0;
-                                                case 5:
-                                                        printf("The box eats you. Try again.\n");
-                                                        break;
-                                                default:
-                                                        printf("Invalid choice. Please try again.\n");
-                                                }
-                                if (playerHP <= 0) {
-                                printf("You have been defeated. Try again.\n");
-                                return 0;
-                                }
-                                printf("Choose another box (1-5, 0 to exit): ");
-                                scanf("%d", &boxChoice);
-                                }
-                                printf("Exiting the game.\n");
-                                break;
-
+				puts("Welcome to 24! We sure will have a lot of fun");
+    				int playerHP = 500, boxChoice, attackChoice, enemyHP;
+   				const int attackDamage[] = {300, 400, 100000, -1}; 
+   				srand(time(NULL));
+    				printf("You enter a room with five boxes. Choose one (1-5, 0 to exit): ");
+    				scanf("%d", &boxChoice);
+    				while (boxChoice != 0) {
+        				switch (boxChoice) {
+            					case 1:
+             						puts("You have received a giant glowing ball.");
+                					break;
+            					case 2:
+                					enemyHP = 1000; // Giant's HP
+                					printf("You are in combat with a Giant!\n");
+						          while (playerHP > 0 && enemyHP > 0) {
+                    						printf("Choose your attack (1-4): ");
+                    						scanf("%d", &attackChoice);
+                    						if (attackChoice >= 1 && attackChoice <= 4) {
+                        					enemyHP -= attackDamage[attackChoice - 1];
+                        					printf("You attacked the Giant! Giant's HP: %d\n", enemyHP);
+                    						} else {
+                       	 						printf("Invalid attack. Try again.\n");
+                        						continue;
+                    						}
+                    						if (enemyHP <= 0) {
+                        					printf("You defeated the Giant!\n");
+                        					return 0;  }
+                   						 playerHP -= 50 + rand() % 20;
+                   						 printf("The Giant attacks you! Your HP: %d\n", playerHP);
+               							 }
+                						break;
+            					case 3:
+                					puts("The King is in the box, He chooses to marry you!");
+                					break;
+            					case 4:
+                					printf("You found the princess. More adventures ahead!\n");
+                					break; 
+            					case 5:
+                					printf("The box eats you. Try again.\n");
+                					break;
+            					default:
+                					printf("Invalid choice. Please try again.\n");
+        					}
+        			if (playerHP <= 0) {
+            			printf("You have been defeated. Try again.\n");
+            			return 0; 
+        			}
+        			printf("Choose another box (1-5, 0 to exit): ");
+        			scanf("%d", &boxChoice);
+    				}
 				break;
 			}
 			case 25:
@@ -513,7 +509,7 @@ int main(int argc, char *argv[])
 
 				if(num == 2)
 				{
-					int clowns[3];
+					int clowns[4];
 					clowns[0] = 10;
 					clowns[1] = 5;
 					clowns[2] = 50;
@@ -1703,6 +1699,7 @@ void useRations()
 int car(int num)
 {
 	printf("And you won a Chevy Stingray!\n");
+	return 0;  
 }
 
 int useGoldCoin() 
